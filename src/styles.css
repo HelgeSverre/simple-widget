@@ -1,0 +1,181 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Base container */
+#simple-widget-root {
+    position: fixed;
+    z-index: 9000;
+    top: 0;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, sans-serif;
+    display: flex;
+}
+
+/* Positioning */
+#simple-widget-root.right {
+    right: 0;
+}
+
+#simple-widget-root.left {
+    left: 0;
+}
+
+.widget-container.right {
+    right: 0;
+}
+
+.widget-container.left {
+    left: 0;
+}
+
+.widget-container.no-transition .widget-panel {
+    transition: none !important;
+}
+
+.widget-panel {
+    position: relative;
+    display: flex;
+    height: 100%;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Right side positioning and transitions */
+.widget-container.right.closed .widget-panel {
+    transform: translateX(300px);
+}
+
+.widget-container.right.open .widget-panel {
+    transform: translateX(0);
+}
+
+/* Left side positioning and transitions */
+.widget-container.left.closed .widget-panel {
+    transform: translateX(-300px);
+}
+
+.widget-container.left.open .widget-panel {
+    transform: translateX(0);
+}
+
+.widget-container.left .widget-panel {
+    flex-direction: row-reverse;
+}
+
+/* Tab styling */
+.widget-tab {
+    position: absolute;
+    width: 28px;
+    height: 42px;
+    background: #4a86e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    border: none;
+    margin-top: 35px;
+    z-index: 1;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget-tab:hover {
+    background: #3a76d8;
+}
+
+.widget-container.right .widget-tab {
+    left: -28px;
+    border-radius: 4px 0 0 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-right: none;
+}
+
+.widget-container.left .widget-tab {
+    right: -28px;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-left: none;
+}
+
+.tab-icon {
+    line-height: 1;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Main panel styling */
+#simple-widget {
+    width: 300px;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+    border-left: 1px solid #e6e6e6;
+}
+
+.widget-container.left #simple-widget {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+    border-right: 1px solid #e6e6e6;
+    border-left: none;
+}
+
+/* Widget header */
+.widget-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.widget-header h1 {
+    margin: 0;
+    font-size: 15px;
+    color: #444;
+    font-weight: 500;
+}
+
+/* Widget content area */
+.widget-content {
+    flex: 1;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+/* Textarea for notes */
+textarea {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 12px;
+    resize: none;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4a86e8;
+    box-shadow: 0 0 0 2px rgba(74, 134, 232, 0.1);
+}
+
+textarea::placeholder {
+    color: #aaa;
+}

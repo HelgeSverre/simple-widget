@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ChatFlow - Cypress Test Page</title>
+        <style>
+            /* Bare essentials */
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                background: #ccc;
+            }
+
+            .website {
+                max-width: 920px;
+                margin: 0 auto;
+                padding: 20px;
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-top: 50px;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            nav {
+                background: #333;
+                color: #fff;
+                padding: 10px;
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+            }
+
+            nav ul li {
+                margin-right: 10px;
+            }
+
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            footer {
+                margin-top: 20px;
+                padding: 10px;
+                background: #333;
+                color: #fff;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="website">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <h1>Welcome to website!</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus eius eos error explicabo facere, ipsum laborum libero
+                obcaecati recusandae! Consequatur cupiditate debitis eveniet
+                expedita iusto modi neque quod sapiente sit?
+            </p>
+
+            <img
+                src="https://images.pexels.com/photos/276267/pexels-photo-276267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt=""
+            />
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus eius eos error explicabo facere, ipsum laborum libero
+                obcaecati recusandae! Consequatur cupiditate debitis eveniet
+                expedita iusto modi neque quod sapiente sit?
+            </p>
+
+            <footer>
+                <p>&copy; 2025 - Example Website</p>
+            </footer>
+        </div>
+
+        <!-- Load widget for testing with auto-init -->
+        <script src="../../dist/widget.js" defer></script>
+        <!-- In a real application, you would load the widget like this, but this way it works when you open the HTML file directly in the browser -->
+        <!-- <script src="https://example.com/dist/widget.js" defer></script> -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                SimpleWidget.init();
+            });
+        </script>
+    </body>
+</html>

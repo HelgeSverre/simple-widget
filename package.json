@@ -1,0 +1,50 @@
+{
+    "name": "simple-widget",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Example of an embeddable widget built in Svelte and Vite",
+    "keywords": [
+        "widget",
+        "notepad",
+        "svelte",
+        "embeddable",
+        "javascript",
+        "ui"
+    ],
+    "homepage": "https://github.com/helgesverre/simple-widget",
+    "license": "MIT",
+    "author": "Helge Sverre <helge.sverre@gmail.com>",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/widget.js"
+        }
+    },
+    "main": "./dist/widget.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "vite build",
+        "clean": "rm -rf dist",
+        "dev": "vite",
+        "format": "prettier --write . ",
+        "preview": "vite preview",
+        "sort": "npx sort-package-json",
+        "test": "vite build && npx playwright test",
+        "test:ui": "npx playwright test --ui"
+    },
+    "dependencies": {
+        "classnames": "^2.5.1",
+        "http-server": "^14.1.1",
+        "prettier": "^3.2.5",
+        "prettier-plugin-svelte": "^3.2.2",
+        "vite-plugin-css-injected-by-js": "^3.4.0"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.42.1",
+        "@sveltejs/vite-plugin-svelte": "^3.0.2",
+        "svelte": "^4.2.11",
+        "vite": "^5.1.4"
+    }
+}
